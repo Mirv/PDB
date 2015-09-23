@@ -1,6 +1,6 @@
 class GridController < ApplicationController
   
-  render layout: "grid"
+  layout: 'grid'
   
   before_action :set_map_point, only: [:point]
   before_action :set_map_point_to_move_to, only: [:move]
