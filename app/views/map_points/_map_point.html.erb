@@ -1,20 +1,19 @@
 <div class="map_point float border" id="current_map_point">
-  <p>
-    <strong>Zone:</strong>
-    <%= @map_point.zone %>
-  </p>
-  <p>
+  <div class="row">
+    <div class="col-xs-6">
+    <div class="zone-number"><%= @map_point.zone %> </div>
     <strong>X:</strong>
-    <%= @map_point.x %>
-  </p>
-  <p>
+    <%= @map_point.x %> <br />
     <strong>Y:</strong>
     <%= @map_point.y %>
-  </p>
-  <p>
-    <strong>Entities:</strong>
-    <ul class="microposts">
-      <%= render @map_point.entities unless @map_point.entities.empty? %>
-    </ul>
-  </p>
+  </div>
+    <div class="col-xs-6">
+      <strong>Entities:</strong>
+      <ul class="microposts">
+        <%= render @map_point.entities unless @map_point.entities.empty? %>
+      </ul>
+    </div>
+
+
+  </div>
 </div>

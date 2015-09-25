@@ -1,12 +1,13 @@
-<h1>Grid system</h1>
-<div class="row">
-  <div class="centered">
+<header>
+  Header
+</header>
+<section>
+  <div class="grid-container">
     <%= form_tag do %>
     <table class="table-bordered float inline">
       <% @map_points.each do |key, array| %>
       <tr>
         <% array.each do |map_point| %>
-
         <% if map_point.id == @map_point.id %>
         <td class="current_zone">
           <%= radio_button_tag(:id,map_point.id, true, class: "grid_point") %>
@@ -22,30 +23,53 @@
       <% end %>
     </table>
     <% end %>
-    <div class="float inline square border">
-      <div class="row arrow centered">
-        <% unless @neighbors[Directions::NORTH].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn glyphicon glyphicon-arrow-up centered"  %>
+  </div>
+  <div class="controls">
+    <div class="arrow">
+      <% unless @neighbors[Directions::NORTH].nil? %>
+      <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn btn-grid-controls north-west glyphicon glyphicon-arrow-up"  %>
+      <% end %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::NORTH].nil? %>
+      <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn btn-grid-controls glyphicon glyphicon-arrow-up"  %>
+      <% end %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::NORTH].nil? %>
+      <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn btn-grid-controls north-east glyphicon glyphicon-arrow-up"  %>
+      <% end %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::WEST].nil? %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::WEST]), :class => "btn btn-grid-controls glyphicon glyphicon-arrow-left"  %>
         <% end %>
-      </div>
-      <div class="row arrow">
-        <% unless @neighbors[Directions::WEST].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::WEST]), :class => "btn glyphicon glyphicon-arrow-left"  %>
+    </div>
+    <div class="arrow"></div>
+    <div class="arrow">
+    <% unless @neighbors[Directions::EAST].nil? %>
+      <%= link_to '', grid_move_path(@neighbors[Directions::EAST]), :class => "btn btn-grid-controls glyphicon glyphicon-arrow-right"  %>
+      <% end %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::SOUTH].nil? %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn btn-grid-controls south-west glyphicon glyphicon-arrow-down"  %>
         <% end %>
-        <% unless @neighbors[Directions::EAST].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::EAST]), :class => "btn glyphicon glyphicon-arrow-right"  %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::SOUTH].nil? %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn btn-grid-controls glyphicon glyphicon-arrow-down"  %>
         <% end %>
-      </div>
-      <div class="row arrow centered">
-        <% unless @neighbors[Directions::SOUTH].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn glyphicon glyphicon-arrow-down centered"  %>
+    </div>
+    <div class="arrow">
+      <% unless @neighbors[Directions::SOUTH].nil? %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn btn-grid-controls south-east glyphicon glyphicon-arrow-down"  %>
         <% end %>
-      </div>
     </div>
   </div>
-</div>
-<div class="row">
+</section>
+<footer>
   <div class="float zone">
     <%= render @map_point ||= MapPoint.new %>
   </div>
-</div>
+</footer>

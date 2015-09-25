@@ -1,12 +1,88 @@
 // Place all the styles related to the Grid controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  /* flex: 1; would be enough but it looks bad in IE */
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+  padding: 2em;
+}
+
+footer {
+  background: #FAFAFA;
+  border-top: 1px solid #DDDDDD;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+table {
+
+}
+
 td {
-  padding: 10px 10px 10px 10px
+  width: 80px;
+  height: 80px;
 }
 .float {
   float: left;
 }
+
+.btn-grid-controls {
+    vertical-align: top;
+    color: black;
+}
+
+.north-west {
+  -webkit-transform: rotate(-45deg);
+}
+
+.north-east {
+  -webkit-transform: rotate(45deg);
+}
+
+.south-west {
+  -webkit-transform: rotate(45deg);
+}
+
+.south-east {
+  -webkit-transform: rotate(-45deg);
+}
+
+.controls {
+  margin-left: 100px;
+  width: 116px;
+  height: 117px;
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .arrow {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #dddddd;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
 .centered {
   margin-left: auto;
   margin-right: auto;
@@ -15,13 +91,6 @@ td {
 
 .inline {
   display: inline;
-}
-
-.border {
-    margin: 8px;
-    border: 1px solid silver;
-    padding: 8px;
-    border-radius: 4px;
 }
 
 .arrow {
@@ -43,10 +112,50 @@ td {
 }
 
 
-.zone {
-    margin-top: 20px;
+
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
 
-#current_map_point {
-  padding: 15px 15px 15px 15px;
+.flexcontainer {
+  display: flex;
+ min-height: 100vh;
+ flex-direction: column;
+}
+
+.grid-container {
+    background-color: #FAFAFA;
+    padding: 5px;
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+.zone {
+    margin-top: 5px;
+
+
+}
+
+.zone-number {
+  background:#bfd70e;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  border:2px solid #679403;
 }

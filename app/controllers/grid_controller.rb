@@ -1,7 +1,7 @@
 class GridController < ApplicationController
-  
-  layout: 'grid'
-  
+
+  layout 'grid'
+
   before_action :set_map_point, only: [:point]
   before_action :set_map_point_to_move_to, only: [:move]
   before_action :redirect_if_no_player, only: [:show]
