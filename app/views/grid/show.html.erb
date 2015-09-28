@@ -26,7 +26,7 @@
   </div>
   <div class="controls">
     <div class="arrow">
-      <% unless @neighbors[Directions::NORTH].nil? %>
+      <% unless @neighbors[Directions::NORTHWEST].nil? %>
       <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn btn-grid-controls north-west glyphicon glyphicon-arrow-up"  %>
       <% end %>
     </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="arrow">
       <% unless @neighbors[Directions::NORTH].nil? %>
-      <%= link_to '', grid_move_path(@neighbors[Directions::NORTH]), :class => "btn btn-grid-controls north-east glyphicon glyphicon-arrow-up"  %>
+      <%= link_to '', grid_move_path(@neighbors[Directions::NORTHEAST]), :class => "btn btn-grid-controls north-east glyphicon glyphicon-arrow-up"  %>
       <% end %>
     </div>
     <div class="arrow">
@@ -53,7 +53,7 @@
     </div>
     <div class="arrow">
       <% unless @neighbors[Directions::SOUTH].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn btn-grid-controls south-west glyphicon glyphicon-arrow-down"  %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTHWEST]), :class => "btn btn-grid-controls south-west glyphicon glyphicon-arrow-down"  %>
         <% end %>
     </div>
     <div class="arrow">
@@ -63,7 +63,7 @@
     </div>
     <div class="arrow">
       <% unless @neighbors[Directions::SOUTH].nil? %>
-        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTH]), :class => "btn btn-grid-controls south-east glyphicon glyphicon-arrow-down"  %>
+        <%= link_to '', grid_move_path(@neighbors[Directions::SOUTHEAST]), :class => "btn btn-grid-controls south-east glyphicon glyphicon-arrow-down"  %>
         <% end %>
     </div>
   </div>
