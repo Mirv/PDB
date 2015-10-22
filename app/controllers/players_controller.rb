@@ -11,6 +11,7 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
     @entity = Entity.new
+    @hero = Hero.new
   end
 
   def show

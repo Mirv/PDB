@@ -30,6 +30,24 @@
     <%= fe.text_field :description, class: 'form-control margin-bottom' %>
   <% end %>
 
+  <h2>Attributes</h2>
+  <%= fields_for @hero do |fh| %>
+    <%= fh.label :strenght %>
+    <%= fh.number_field :strenght, class: 'form-control' %>
+
+    <%= fh.label :dexterity %>
+    <%= fh.number_field :dexterity, class: 'form-control' %>
+
+    <%= fh.label :vitality %>
+    <%= fh.number_field :vitality, class: 'form-control' %>
+
+    <%= fh.label :intelligence %>
+    <%= fh.number_field :intelligence, class: 'form-control' %>
+
+    <%= fh.label :charisma %>
+    <%= fh.number_field :charisma, class: 'form-control' %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

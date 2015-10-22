@@ -1,0 +1,39 @@
+<%= form_for(@hero) do |f| %>
+  <% if @hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+      <ul>
+      <% @hero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :hp %>
+  <%= f.number_field :hp, class: 'form-control' %>
+
+  <%= f.label :energy %>
+  <%= f.number_field :energy, class: 'form-control' %>
+
+  <%= f.label :reputation %>
+  <%= f.number_field :reputation, class: 'form-control' %>
+
+  <%= f.label :experience %>
+  <%= f.number_field :experience, class: 'form-control' %>
+
+  <%= f.label :strenght %>
+  <%= f.number_field :strenght, class: 'form-control' %>
+
+  <%= f.label :dexterity %>
+  <%= f.number_field :dexterity, class: 'form-control' %>
+
+  <%= f.label :vitality %>
+  <%= f.number_field :vitality, class: 'form-control' %>
+
+  <%= f.label :intelligence %>
+  <%= f.number_field :intelligence, class: 'form-control' %>
+
+  <%= f.label :charisma %>
+  <%= f.number_field :charisma, class: 'form-control' %>
+
+  <% end %>
