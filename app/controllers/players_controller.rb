@@ -23,7 +23,8 @@ class PlayersController < ApplicationController
     entity_params_with_default = entity_params
     entity_params_with_default[:map_point_id] = MapPoint.first.id
     @entity = @player.build_entity(entity_params_with_default)
-    if @player.save && @entity.save
+    @hero = Hero.new(hero_params)
+    if @player.save && @entity.save && @hero.save
       #flash[:info] = "Point on the map created"
       redirect_to players_path
     else
@@ -62,6 +63,9 @@ class PlayersController < ApplicationController
       params.require(:entity).permit(:name, :description)
     end
 
+    def hero_params
+      params.require(:hero).permit(:strenght, :dexterity, :vitality, :intelligence, :charisma)
+    end
 
     def set_player
       @player = Player.find(params[:id])
