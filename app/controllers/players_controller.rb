@@ -24,10 +24,15 @@ class PlayersController < ApplicationController
     entity_params_with_default[:map_point_id] = MapPoint.first.id
     @entity = @player.build_entity(entity_params_with_default)
     @hero = Hero.new(hero_params)
-    if @player.save && @entity.save && @hero.save
-      #flash[:info] = "Point on the map created"
-      redirect_to players_path
-    else
+
+    begin
+      ActiveRecord::Base.transaction do
+        @player.save
+        @entity.save
+        @hero.save
+        redirect_to players_path
+      end
+    rescue => e
       render 'new'
     end
   end
