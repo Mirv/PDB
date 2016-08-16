@@ -33,6 +33,7 @@ class PlayersController < ApplicationController
         redirect_to players_path
       end
     rescue => e
+      p @hero.errors
       render 'new'
     end
   end

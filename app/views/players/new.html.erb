@@ -31,6 +31,16 @@
   <% end %>
 
   <h2>Attributes</h2>
+    <% if @hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hero.errors.count, "error") %> prohibited this entity from being saved:</h2>
+      <ul>
+      <% @hero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= fields_for @hero do |fh| %>
     <%= fh.label :strenght %>
     <%= fh.number_field :strenght, class: 'form-control' %>

@@ -1,17 +1,23 @@
 class Hero < ActiveRecord::Base
-  validate :sums_of_attributes_more_than_start, :sums_of_attributes_less_than_start
+  validates :strenght, presence: true
+  validates :intelligence, presence: true
+  validates :dexterity, presence: true
+  validates :charisma, presence: true
+  validates :vitality, presence: true
+  validate :sums_of_attributes_less_than_start#, :sums_of_attributes_more_than_start
   before_save :set_rest_of_attributes
   STARTING_STATS = 25
 
   def sums_of_attributes_more_than_start
     if STARTING_STATS < strenght + dexterity + vitality + intelligence + charisma
-      errors.add(:strenght, "Sums of attributes must not be higher than #{STATS_SUM}")
+      errors.add(:base, message: "Sums of attributes must not be higher than #{STATS_SUM}")
     end
   end
 
   def sums_of_attributes_less_than_start
     if STARTING_STATS > strenght + dexterity + vitality + intelligence + charisma
-      errors.add(:strenght, "Sums of attributes must not be less than #{STATS_SUM}")
+      puts 'banane'
+      errors.add(:base, "Sums of attributes must not be less than #{STATS_SUM}")
     end
   end
 
