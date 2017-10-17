@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'jruby', "9.1.13.0"
 #  Latest attempt to stabalize behavior on `RVM` (list shows default not being honored)
-gem 'jruby-jars', '~> 9.1', '>= 9.1.2.0'
+gem 'jruby-jars', '9.1.13.0'
 # ruby "2.3.3"
 #   ruby "1.8.7", :engine => "jruby", :engine_version => "1.6.7"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
